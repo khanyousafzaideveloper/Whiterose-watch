@@ -25,5 +25,6 @@ while True:
     if(sec=='0'):
         playsound(beep())
         curr_time()
+        time.sleep(56)
      
 
