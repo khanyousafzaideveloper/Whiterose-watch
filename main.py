@@ -7,15 +7,16 @@ def beep():
     return file_name
 
 def curr_time():
+    t = time.gmtime()
     print(f"{t.tm_hour}:{t.tm_min}:{t.tm_sec}")
 
 t1 = threading.Thread(target=beep)
 t2 = threading.Thread(target=curr_time)
 
-t1.start()
 t2.start()
+t1.start()
 
-t1.join()
+t2.join()
 t1.join()
 
 while True:
@@ -24,6 +25,5 @@ while True:
     if(sec=='0'):
         playsound(beep())
         curr_time()
-        time.sleep(57)
      
 
