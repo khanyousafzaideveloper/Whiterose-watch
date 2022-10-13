@@ -2,10 +2,10 @@ import time
 from playsound import playsound
 
 while True:
-    local_time = time.gmtime()
-    curr_sec = str(local_time.tm_sec)
-    print(curr_sec)
-    if(curr_sec=='0'):
+    t = time.gmtime()
+    sec = str(t.tm_sec)
+    if(sec=='0'):
         playsound('wrist_watch_beep.mp3')
-        time.sleep(54)
+        print(f"{t.tm_hour}:{t.tm_min}:{t.tm_sec}")
+        time.sleep(57)
      
